@@ -1,0 +1,26 @@
+---
+import SocialNetwork from "./Social.astro";
+const platform = "withastro";
+const username = "fabiombarbosa";
+const socialNetworks = ["Instagram", "LinkedIn", "Twitter"];
+---
+
+<style>
+	footer {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+</style>
+<footer>
+	<p>
+		Learn more about my projects on <a
+			href={`https://www.${platform}.com/${username}`}>{platform}</a
+		>
+	</p>
+	{
+		socialNetworks.map((network) => (
+			<SocialNetwork platform={network} username={username} />
+		))
+	}
+</footer>
